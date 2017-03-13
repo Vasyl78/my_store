@@ -1,0 +1,10 @@
+<%= render partial: "auth" %>
+<h1><%= @item.name %></h1>
+<ul>
+	<li><%= @item.price %> руб.</li>
+	
+	<li><%= urls_to_mail(@item.description)%></li>
+	<a href="mailto:vasyl.terekh@gmail.com">vasyl.terekh@gmail.com</a>
+	<li><%= @item.weight %> кг </li>
+
+</ul>
