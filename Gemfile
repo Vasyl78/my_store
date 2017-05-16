@@ -31,6 +31,10 @@ gem 'haml-rails'
 
 gem 'better_errors'
 
+gem 'simple_form', git: 'git://github.com/plataformatec/simple_form'
+
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
