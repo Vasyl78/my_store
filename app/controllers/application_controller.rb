@@ -17,11 +17,9 @@ class ApplicationController < ActionController::Base
 	  	#render text: "Access denied", status: 403 unless current_user.admin == true
 		#render text: "Access denied", status: 403 unless params[:admin]
 		#render_403 unless params[:admin]
-	end
+	  end
 
-	#def after_sign_in_path_for(resource)
-  	#	current_user_path
-	#end
+	
 
 	
 end

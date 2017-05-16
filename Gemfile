@@ -26,6 +26,12 @@ gem 'coffee-rails', '~> 4.2'
 #Adding Authentication with Devise
 gem 'devise'
 
+
+gem 'haml-rails'
+
+gem 'better_errors'
+
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

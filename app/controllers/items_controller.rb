@@ -55,13 +55,14 @@ class ItemsController < ApplicationController
 
 	# /items/1 PUT
 	def update
-		ActionController::Parameters.permit_all_parameters = true
 		#@item = Item.find(params[:id])
-		@item.update_attributes(params.require(:item))
+		@item.update_attributes(item_params)
 		if @item.errors.empty?
+			flash.now[:success] = "Item successfully updated!"
 			redirect_to item_path(@item)
 		else
-			redirect_to item_path(@item)
+			flash.now[:error] = "You made mistakes in your form! Please correct them."
+			render "edit"
 		end
 	end
 
@@ -82,6 +83,11 @@ class ItemsController < ApplicationController
 		#@item = Item.find(params[:id])
 		@item = Item.where(id: params[:id]).first
 		render_404 unless @item		
+		
+	end
+
+	def item_params
+		params.require(:item).permit(:price, :weight, :real, :name, :description, :image)
 		
 	end
 
