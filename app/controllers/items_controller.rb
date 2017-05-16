@@ -40,10 +40,9 @@ class ItemsController < ApplicationController
 	end
 	# /items POST
 	def create
+		@item = Item.create(item_params)
 		#render text: params.inspect
-		ActionController::Parameters.permit_all_parameters = true
 		#@item = Item.create(name: params[:name], description: params[:description], price: params[:price], real: params[:real], weight: params[:weight] )
-		@item = Item.create(params.require(:item))
 		#render  text: "#{@item.id}: #{@item.name} (#{!@item.new_record?})"
 		#puts @item.errors.full_messages
 		if @item.errors.empty?
